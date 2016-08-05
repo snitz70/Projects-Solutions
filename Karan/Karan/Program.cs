@@ -25,5 +25,18 @@ namespace Karan
         {
             return System.Math.Round(System.Math.E, decimalPlaces);
         }
+
+        public static int[] Fibonacci(int number)
+        {
+            int[] fib = new int[number];
+            fib[0] = fib[1] = 1;
+            for(int i=2; i<number; ++i)
+            {
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+            return fib;
+
+
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 using Karan;
 
 namespace karan.UnitTests
@@ -34,4 +35,21 @@ namespace karan.UnitTests
             double actualResult = Karan.Numbers.CalculateE(5);
         }
     }
+
+    [TestClass]
+    public class Fibonacci
+    {
+        [TestMethod]
+        public void CalculateFibonacci()
+        {
+            int[] expectedResult = { 1, 1, 2, 3, 5, 8, 13 };
+            int[] actualResult = Karan.Numbers.Fibonacci(7);
+            bool isEqual = expectedResult.SequenceEqual(actualResult);
+            Assert.IsTrue(isEqual);
+            
+
+        }
+    }
+
+
 }
